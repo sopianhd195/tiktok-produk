@@ -1,0 +1,5 @@
+{
+  "name": "TikTok Affiliate Content Generator",
+  "description": "An application to generate high-quality images for TikTok affiliate marketing content. Users can upload a product photo, describe their product, choose a virtual model and a visual vibe, and the app will generate six portrait-oriented images ready for social media.",
+  "requestFramePermissions": []
+}
