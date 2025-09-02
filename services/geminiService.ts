@@ -1,10 +1,9 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 
 const API_KEY = process.env.API_KEY;
 
 if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set.");
+  throw new Error("Variabel lingkungan API_KEY tidak diatur.");
 }
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
@@ -60,8 +59,8 @@ const generateSingleImageWithProduct = async (prompt: string, mimeType: string, 
         // It's possible the model just returns text if it can't fulfill the request.
         const textResponse = response.text?.trim();
         const errorMessage = textResponse
-            ? `API returned text instead of an image: "${textResponse}"`
-            : "API did not return an image from the editing model.";
+            ? `API mengembalikan teks, bukan gambar: "${textResponse}"`
+            : "API tidak mengembalikan gambar dari model penyuntingan.";
         throw new Error(errorMessage);
     }
     return imageUrl;
@@ -74,7 +73,7 @@ export const generateAffiliateImages = async (prompt: string, imageBase64: strin
       // --- Case 1: Image is provided, use multimodal generation ---
       const match = imageBase64.match(/^data:(image\/.*?);base64,(.*)$/);
       if (!match) {
-        throw new Error("Invalid base64 image format. Please upload a valid image.");
+        throw new Error("Format gambar base64 tidak valid. Harap unggah gambar yang valid.");
       }
       const [, mimeType, data] = match;
 
@@ -117,25 +116,25 @@ export const generateAffiliateImages = async (prompt: string, imageBase64: strin
       const allGeneratedImages = [...images1, ...images2];
 
       if (allGeneratedImages.length === 0) {
-        throw new Error("The API did not return any images despite successful requests.");
+        throw new Error("API tidak mengembalikan gambar apa pun meskipun permintaan berhasil.");
       }
       return allGeneratedImages;
     }
 
   } catch (error) {
     console.error("Error generating images with Gemini API:", error);
-    let errorMessage = "An unexpected error occurred while communicating with the Gemini API.";
+    let errorMessage = "Terjadi kesalahan tak terduga saat berkomunikasi dengan Gemini API.";
     if (error instanceof Error) {
         // Attempt to parse a JSON error message from the API for better feedback
         try {
             const errorObj = JSON.parse(error.message);
             if (errorObj?.error?.message) {
-                errorMessage = `API Error: ${errorObj.error.message}`;
+                errorMessage = `Kesalahan API: ${errorObj.error.message}`;
             } else {
-                 errorMessage = `Failed to generate images: ${error.message}`;
+                 errorMessage = `Gagal menghasilkan gambar: ${error.message}`;
             }
         } catch (e) {
-            errorMessage = `Failed to generate images: ${error.message}`;
+            errorMessage = `Gagal menghasilkan gambar: ${error.message}`;
         }
     }
     throw new Error(errorMessage);

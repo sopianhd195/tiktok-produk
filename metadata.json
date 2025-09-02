@@ -1,5 +1,5 @@
 {
-  "name": "TikTok Affiliate Content Generator",
-  "description": "An application to generate high-quality images for TikTok affiliate marketing content. Users can upload a product photo, describe their product, choose a virtual model and a visual vibe, and the app will generate six portrait-oriented images ready for social media.",
+  "name": "Generator Konten Afiliasi",
+  "description": "Sebuah aplikasi untuk menghasilkan gambar berkualitas tinggi untuk konten pemasaran afiliasi TikTok. Pengguna dapat mengunggah foto produk, mendeskripsikan produk mereka, memilih model virtual dan suasana visual, dan aplikasi akan menghasilkan enam gambar berorientasi potret yang siap untuk media sosial.",
   "requestFramePermissions": []
 }

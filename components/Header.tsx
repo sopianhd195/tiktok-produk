@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SparklesIcon } from './icons/SparklesIcon';
 
@@ -9,7 +8,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-center text-center">
             <SparklesIcon className="w-8 h-8 mr-3 text-purple-400" />
             <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                TikTok Affiliate Content Generator
+                Generator Konten Afiliasi TikTok
             </h1>
         </div>
       </div>

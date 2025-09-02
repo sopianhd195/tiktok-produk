@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useEffect } from 'react';
 import { UploadIcon } from './icons/UploadIcon';
 
@@ -70,10 +69,10 @@ export const ProductInput: React.FC<ProductInputProps> = ({ image, onImageChange
 
   return (
     <div className="bg-gray-800/50 p-8 rounded-2xl shadow-lg border border-gray-700">
-      <h2 className="text-2xl font-bold mb-6 text-purple-300 text-center">Step 1: Describe Your Product</h2>
+      <h2 className="text-2xl font-bold mb-6 text-purple-300 text-center">Langkah 1: Deskripsikan Produk Anda</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div className="flex flex-col items-center">
-            <p className="text-center text-gray-400 mb-4">Upload a reference image (optional)</p>
+            <p className="text-center text-gray-400 mb-4">Unggah gambar referensi (opsional)</p>
             <label 
               onDragOver={handleDragOver}
               onDrop={handleDrop}
@@ -82,14 +81,14 @@ export const ProductInput: React.FC<ProductInputProps> = ({ image, onImageChange
               <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
               {imageUrl ? (
                 <>
-                    <img src={imageUrl} alt="Product Preview" className="w-full h-full object-cover rounded-lg" />
+                    <img src={imageUrl} alt="Pratinjau Produk" className="w-full h-full object-cover rounded-lg" />
                     <button
                         onClick={(e) => {
                             e.preventDefault(); // Prevent file dialog from opening
                             handleRemoveImage();
                         }}
                         className="absolute top-2 right-2 bg-black/60 text-white rounded-full p-1.5 hover:bg-red-500 transition-colors z-10"
-                        aria-label="Remove image"
+                        aria-label="Hapus gambar"
                     >
                        <CloseIcon className="w-4 h-4" />
                     </button>
@@ -97,22 +96,22 @@ export const ProductInput: React.FC<ProductInputProps> = ({ image, onImageChange
               ) : (
                 <div className="text-center p-4">
                     <UploadIcon className="w-12 h-12 mx-auto mb-2" />
-                    <p>Drag & drop or click to upload</p>
+                    <p>Seret & lepas atau klik untuk mengunggah</p>
                 </div>
               )}
             </label>
         </div>
 
         <div className="flex flex-col h-full">
-            <p className="text-gray-400 mb-4">Describe your product for the AI <span className="text-red-500">*</span></p>
+            <p className="text-gray-400 mb-4">Deskripsikan produk Anda untuk AI <span className="text-red-500">*</span></p>
             <textarea
                 value={description}
                 onChange={(e) => onDescriptionChange(e.target.value)}
-                placeholder="e.g., A stylish, noise-cancelling wireless headphone in matte black with gold accents."
+                placeholder="contoh: Headphone nirkabel peredam bising yang stylish dalam warna hitam matte dengan aksen emas."
                 className="w-full flex-grow bg-gray-700/50 border border-gray-600 rounded-lg p-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition min-h-[200px] md:min-h-0"
                 rows={8}
             />
-            <p className="text-xs text-gray-500 mt-2">Be descriptive! The more detail you provide, the better the result.</p>
+            <p className="text-xs text-gray-500 mt-2">Jadilah deskriptif! Semakin detail Anda, semakin baik hasilnya.</p>
         </div>
       </div>
     </div>

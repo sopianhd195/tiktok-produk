@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useMemo } from 'react';
 import { Header } from './components/Header';
 import { ProductInput } from './components/ProductInput';
@@ -32,7 +31,7 @@ const App: React.FC = () => {
 
   const handleGenerateClick = useCallback(async () => {
     if (!isFormComplete || !selectedModel || !selectedVibe) {
-      setError('Please complete all steps before generating images.');
+      setError('Harap lengkapi semua langkah sebelum menghasilkan gambar.');
       return;
     }
 
@@ -52,7 +51,7 @@ const App: React.FC = () => {
       setGeneratedImages(images);
     } catch (err) {
       console.error(err);
-      setError(err instanceof Error ? err.message : 'An unknown error occurred while generating images.');
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan yang tidak diketahui saat membuat gambar.');
     } finally {
       setIsLoading(false);
     }
@@ -82,14 +81,14 @@ const App: React.FC = () => {
               onDescriptionChange={setProductDescription}
             />
             <OptionSelector
-              title="Step 2: Choose a Model"
+              title="Langkah 2: Pilih Model"
               options={MODELS}
               selectedOption={selectedModel}
               onSelectOption={setSelectedModel}
               disabled={!productDescription}
             />
             <OptionSelector
-              title="Step 3: Choose a Vibe"
+              title="Langkah 3: Pilih Suasana"
               options={VIBES}
               selectedOption={selectedVibe}
               onSelectOption={setSelectedVibe}
@@ -102,7 +101,7 @@ const App: React.FC = () => {
                 className="inline-flex items-center justify-center px-8 py-4 bg-purple-600 text-white font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50 transform hover:scale-105"
               >
                 <SparklesIcon className="w-6 h-6 mr-3" />
-                Generate 6 Images
+                Hasilkan 6 Gambar
               </button>
             </div>
           </div>
@@ -111,11 +110,11 @@ const App: React.FC = () => {
         {isLoading && (
             <div className="flex flex-col items-center justify-center text-center p-8">
                  <LoadingSpinner />
-                 <h2 className="text-2xl font-bold mt-6 text-purple-400">Generating Your Content...</h2>
+                 <h2 className="text-2xl font-bold mt-6 text-purple-400">Menghasilkan Konten Anda...</h2>
                  <p className="mt-2 text-gray-400 max-w-md">
                     {productImageBase64
-                        ? "Our AI is carefully placing your product into new scenes. This might take a bit longer."
-                        : "Our creative AI is warming up. This may take a moment."
+                        ? "AI kami sedang menempatkan produk Anda ke dalam suasana baru. Ini mungkin akan memakan waktu."
+                        : "AI kreatif kami sedang bersiap. Mohon tunggu sebentar."
                     }
                  </p>
             </div>
@@ -123,13 +122,13 @@ const App: React.FC = () => {
 
         {error && (
             <div className="text-center p-8 bg-red-900/50 border border-red-700 rounded-lg">
-                <h3 className="text-xl font-bold text-red-400">An Error Occurred</h3>
+                <h3 className="text-xl font-bold text-red-400">Terjadi Kesalahan</h3>
                 <p className="mt-2 text-red-300">{error}</p>
                 <button
                     onClick={handleReset}
                     className="mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
                 >
-                    Try Again
+                    Coba Lagi
                 </button>
             </div>
         )}
@@ -142,14 +141,14 @@ const App: React.FC = () => {
                         onClick={handleReset}
                         className="px-8 py-3 bg-gray-700 text-white font-bold rounded-full hover:bg-gray-600 transition-colors"
                     >
-                        Start Over
+                        Mulai dari Awal
                     </button>
                 </div>
             </div>
         )}
       </main>
       <footer className="text-center py-6 text-gray-500 text-sm">
-        <p>Powered by Gemini API</p>
+        <p>Didukung oleh Gemini API</p>
       </footer>
     </div>
   );

@@ -1,34 +1,33 @@
-
 import type { Option } from './types';
 
 export const MODELS: Option[] = [
   {
     id: 'female-asian',
-    name: 'Asian Woman',
+    name: 'Wanita Asia',
     image: 'https://picsum.photos/seed/model1/300/400',
     prompt: 'a beautiful young Asian woman with a friendly smile'
   },
   {
     id: 'male-caucasian',
-    name: 'Caucasian Man',
+    name: 'Pria Kaukasia',
     image: 'https://picsum.photos/seed/model2/300/400',
     prompt: 'a handsome young Caucasian man with a confident look'
   },
   {
     id: 'female-black',
-    name: 'Black Woman',
+    name: 'Wanita Kulit Hitam',
     image: 'https://picsum.photos/seed/model3/300/400',
     prompt: 'a stylish young Black woman with an elegant pose'
   },
   {
     id: 'male-hispanic',
-    name: 'Hispanic Man',
+    name: 'Pria Hispanik',
     image: 'https://picsum.photos/seed/model4/300/400',
     prompt: 'a charismatic young Hispanic man with a warm expression'
   },
    {
     id: 'non-binary',
-    name: 'Androgynous Person',
+    name: 'Orang Androgini',
     image: 'https://picsum.photos/seed/model5/300/400',
     prompt: 'a chic androgynous person with a modern haircut'
   },
@@ -37,7 +36,7 @@ export const MODELS: Option[] = [
 export const VIBES: Option[] = [
   {
     id: 'minimalist',
-    name: 'Minimalist',
+    name: 'Minimalis',
     image: 'https://picsum.photos/seed/vibe1/400/300',
     prompt: 'clean, minimalist aesthetic with a neutral color palette, soft natural lighting, and simple, uncluttered background'
   },
@@ -49,7 +48,7 @@ export const VIBES: Option[] = [
   },
   {
     id: 'futuristic',
-    name: 'Futuristic',
+    name: 'Futuristik',
     image: 'https://picsum.photos/seed/vibe3/400/300',
     prompt: 'a sleek, futuristic vibe with neon lights, metallic textures, and a dark, moody environment'
   },
@@ -61,7 +60,7 @@ export const VIBES: Option[] = [
   },
   {
     id: 'luxury',
-    name: 'Luxury',
+    name: 'Mewah',
     image: 'https://picsum.photos/seed/vibe5/400/300',
     prompt: 'an opulent and luxurious setting, featuring rich textures like marble and velvet, elegant decor, and sophisticated lighting'
   }
